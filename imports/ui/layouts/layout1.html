@@ -1,0 +1,38 @@
+<template name='layoutOne'>
+    <nav class="green nav-extended">
+        <div class="">
+            <div class="nav-wrapper">
+                <a class="brand-logo" href="{{pathFor route='home'}}">Home</a>
+                <!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{pathFor route='home'}}">Home</a></li>
+
+                    {{#if currentUser}}
+                        <li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
+                        <li><a href="{{pathFor route='groups'}}">Groups</a></li>
+                        <li><a href="{{pathFor route='profile'}}">Profile</a></li>
+                        <li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
+                    {{else}}
+                        <li><a href="{{pathFor route='connection'}}">SignIn</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{pathFor route='home'}}">Home</a></li>
+        {{#if currentUser}}
+            <li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
+            <li><a href="{{pathFor route='tasks2'}}">Tasks2</a></li>
+            <li><a href="{{pathFor route='profile'}}">Profile</a></li>
+            <li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
+        {{else}}
+            <li><a href="{{pathFor route='connection'}}">SignIn</a></li>
+        {{/if}}
+    </ul>
+-->
+<article>	
+    {{> yield}}
+</article>
+</template>
